@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+$color1 : #1F2937;
+$color2 : #111827;
+$font-color: #D1D5D6;
+$inter :'Inter',
+sans-serif;
+
+@mixin dFlex($content: center, $item: center) {
+    display: flex;
+    justify-content: $content;
+    align-items: $item;
+}
+
+*,
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // border:1px solid white;
+}
+
+nav {
+    @include dFlex(space-between, center);
+    padding: 15px 20px;
+    background-color: $color1;
+    .wrapper-list-img {
+        width: max-content;
+        height: 50px;
+        @include dFlex(start, center);
+        gap: 0 15px;
+
+        .icon {
+            width: 50px;
+            height: 100%;
+            @include dFlex( );
+
+            img {
+                width: 37px;
+                @include dFlex(center,center);
+                cursor: pointer;
+
+            }
+        }
+
+        .list {
+ 
+            width: max-content;
+            height: 100%;
+            @include dFlex();
+            ul {
+                @include dFlex();
+                li {
+                    list-style-type: none;
+                    margin: 0 25px 0 0;
+                    cursor: pointer;
+                    a {
+                        text-decoration: none;
+                        color: $font-color;
+                        font-family: $inter;
+                        font-weight: 500;
+                        font-size: 14px;
+                        border-radius: 5px;
+                        padding: 10px;
+                        &:hover {
+                            background-color: rgb(128, 128, 128, 0.2);
+                            color: white;
+                        }
+                    }
+
+                    .home {
+                        background-color: $color2;
+                        color: white;
+                        
+                        border-radius: 5px;
+
+                        &:hover {
+                            background-color: $color2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .wrapper-bell-img{
+
+        @include dFlex();
+        gap: 20px;
+        i{
+            color: gray;
+            font-size: 20px;
+            cursor: pointer;
+            &:hover{
+                color: white;
+            }
+        }
+        img{
+            width:32px;
+            border-radius: 50%;
+            cursor: pointer;
+            &:active{
+                outline: 3px solid white;
+                padding: 1.5px;
+            }
+        }
+    }
+}
